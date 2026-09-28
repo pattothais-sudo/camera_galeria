@@ -1,0 +1,96 @@
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Meu Aplicativo'),
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+
+          children: [
+            const SizedBox(height: 30),
+
+            const Icon(
+              Icons.phone_android,
+              size: 90,
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              'Bem-vindo!',
+              textAlign: TextAlign.center,
+
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              'Escolha uma das funcionalidades abaixo.',
+              textAlign: TextAlign.center,
+
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  '/localizacao',
+                );
+              },
+
+              icon: const Icon(Icons.location_on),
+
+              label: const Text(
+                'Localização',
+              ),
+
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(16),
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  '/camera',
+                );
+              },
+
+              icon: const Icon(Icons.camera_alt),
+
+              label: const Text(
+                'Câmera e Galeria',
+              ),
+
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(16),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
